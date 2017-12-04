@@ -1,0 +1,20 @@
+This directory is for placing cdx-build packages that can be kept separate from
+an upstream buildroot.  The purpose of this is to make pulling in upstream
+buildroot updates much easier, since your customizations will not touch any 
+files also modified by buildroot changes.
+
+cdxvirt/board        # For machine configs (*_defconfig files)
+       /configs        # For machine configs (*_defconfig files)
+       /fs             # For new filesystems 
+       /package        # For additional packages and/or patching existing packages
+       /patches        # For patching buildroot before build
+
+It is recommended that the layout of the board, configs and package
+directories follow the layout of the buildroot/ peers.
+
+The package/patches directory should have subdirectories for each
+package desired to be patched and patch files contained inside.
+For example to add a patch to skiboot you would create:
+    cdxvirt/patches/docker-engine/0001-example.patch
+
+detail check https://git.busybox.net/buildroot/tree/docs/manual/customize-directory-structure.txt
