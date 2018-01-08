@@ -1,0 +1,18 @@
+#source "$BR2_EXTERNAL/package/<company>/package_name/Config.in"
+#source "$BR2_EXTERNAL_CDX_BUILD_PATH/platform/Config.in"
+
+source "$BR2_EXTERNAL_CDX_BUILD_PATH/platform/Config.in"
+
+menu "cdxvirt"
+
+menu "CDX Packages"
+if BR2_CDXVIRT_PLATFORM
+source "$BR2_EXTERNAL_CDX_BUILD_PATH/package/Config.in"
+endif
+endmenu
+
+menu "Custom Packages"
+source "$BR2_EXTERNAL_CDX_BUILD_PATH/custom/Config.in"
+endmenu
+
+endmenu

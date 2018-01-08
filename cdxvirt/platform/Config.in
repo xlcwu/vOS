@@ -1,0 +1,7 @@
+config BR2_CDXVIRT_PLATFORM
+    bool "Enables only one platform, CDxVirt Platform"
+    default y
+
+config BR2_CDXVIRT_COREOS
+    bool "Enables the CDxVrit CoreOS"
+    default n
